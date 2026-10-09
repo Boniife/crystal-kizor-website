@@ -1,84 +1,98 @@
-# Stage 1 Assessment Submission — Web Developer (Studio COKA)
+# Stage 1 Assessment Submission — Web Developer
 
-**Candidate Application Deliverables**
-- **Target Role**: Web Developer / Frontend Engineer
-- **Brand / Subject**: Crystal Kizor Ecosystem (Studio COKA, ELEvated, TEA, AKO Alliance, Speaking, Alive & Free, Personal Authorship)
-- **Live Deployed Link**: *[Insert your deployed Vercel/Netlify URL, e.g. https://crystal-kizor-website.vercel.app]*
-- **GitHub Repository**: *[Insert your GitHub repo URL, e.g. https://github.com/your-username/crystal-kizor-website]*
+**Studio COKA | Crystal Kizor Website**
+
+## Candidate Details
+
+* **Role:** Web Developer / Frontend Engineer
+* **Live Website:** https://crystal-kizor-website-theta.vercel.app
+* **GitHub Repository:** https://github.com/Boniife/crystal-kizor-website
 
 ---
 
-## 1. Candidate Submission Note (Under 200 Words)
-
-> **Word count**: 178 words (Max limit: 200 words)
+## 1. Submission Note
 
 To the Studio COKA Careers Team,
 
-I built this digital ecosystem for Crystal Kizor using Next.js 16 (Turbopack), React 19, Tailwind CSS, and Motion.
+I built the Crystal Kizor website using Next.js 16, React 19, Tailwind CSS, and Motion.
 
-Rather than presenting seven disjointed businesses, I structured the experience around architectural monograph storytelling—balancing Crystal's personal authority with clear commercial pathways. Key decisions include:
-1. **Editorial Hierarchy**: An immediate dual narrative establishing Crystal's positioning as an architect, educator, and builder, anchored by photography from her practice.
-2. **The Intent Router ('Where Should I Go Next?')**: A dynamic filter allowing prospective clients, keynote curators, and built-environment peers to immediately locate their desired touchpoint without cognitive fatigue.
-3. **Interactive Project Lightbox & Ecosystem Modals**: Deep dives into Studio COKA's bioclimatic designs and ELEvated's craftsmanship with high-resolution imagery and material taxonomies.
-4. **Embedded Strategic Portals**: Direct inclusion of Part 2 (AI Vernacular SpecEngine) and Part 3 (0.1% conversion rate diagnostic) to demonstrate end-to-end product thinking.
+My main goal was to bring the different parts of Crystal’s work together without making the website feel like a collection of unrelated businesses. I wanted visitors to understand what she does and find the part of her work that interests them.
 
-The site is fully responsive, SEO-optimized with JSON-LD structured data, accessible, and engineered for sub-second load times. I look forward to discussing how I can bring this craft to Studio COKA.
+A few decisions shaped the experience:
 
----
+1. **Page structure:** I used an editorial layout with strong typography and photography to introduce Crystal’s work across architecture, education, and design.
+2. **Visitor navigation:** The “Where Should I Go Next?” feature helps visitors find relevant information based on what they are looking for.
+3. **Interactive projects:** The lightbox and ecosystem modals let visitors explore projects and initiatives without constantly navigating between pages.
+4. **Product thinking:** I also explored an AI-powered assistant idea and ways to measure and improve website enquiries.
 
-## 2. Part 2 — AI Product Thinking (Under 300 Words)
-
-> **Brand Chosen**: Studio COKA & The Effective Architect (TEA)  
-> **Tool Proposed**: *ClimaCraft Engine: AI Vernacular Specification Assistant*  
-> **Word count**: 298 words (Max limit: 300 words)
-
-**What it does & Who it is for:**  
-ClimaCraft Engine is an intelligent microclimate specification copilot for architects, structural engineers, and design-build studios across tropical Africa. It transforms local weather telemetry, solar orientation, and indigenous material data into actionable passive architectural specifications.
-
-**The Problem it Solves:**  
-Traditional CAD/BIM energy simulation plugins are optimized for temperate Northern Hemisphere climates, defaulting to costly mechanical HVAC and imported glass envelopes. Built-environment professionals in Nigeria and Sub-Saharan Africa lack rapid, empirical data on how locally quarried laterite, stabilized earth blocks, bamboo, and passive louvers perform under equatorial humidity.
-
-**How Someone Uses It:**  
-An architect inputs project coordinates (e.g., Enugu, 6.45°N), building typology, and budget tier. ClimaCraft synthesizes local microclimate weather files and produces an interactive "Passive Brief": recommended overhang-to-window ratios, prevailing wind breezeway channels, certified regional material assemblies, and thermal mass U-value comparisons.
-
-**Technology Stack & Model:**  
-Built on Next.js and Python FastAPI, utilizing Claude 3.5 Sonnet / Gemini 1.5 Pro via Vercel AI SDK for architectural reasoning. A Retrieval-Augmented Generation (RAG) pipeline (pgvector / Supabase) indexes tropical building research, West African meteorological datasets (Open-Meteo EPW files), and Studio COKA's empirical material case studies.
-
-**First Working Version (MVP) & Safeguards:**  
-- **MVP**: A 3-step web wizard querying climate APIs and outputting exportable PDF specifications with calculated thermal transfer metrics.  
-- **Safeguards**: Strict deterministic validation layers prevent LLM hallucination of structural load values; clear legal disclaimers mandate statutory engineer sign-off; all material recommendations cross-reference verified local supplier registries.
+I built the site to work across screen sizes, with SEO metadata, structured data, and accessibility in mind. I look forward to discussing the project and the decisions behind it.
 
 ---
 
-## 3. Part 3 — Analytics & Improvement Strategy (Under 250 Words)
+## 2. Part 2 — AI Product Thinking
 
-> **Word count**: 246 words (Max limit: 250 words)
+**Brand:** Studio COKA and The Effective Architect (TEA)
 
-**How to Measure Website Performance:**  
-I evaluate digital performance across three dimensions:
-1. **Conversion Quality**: Intent Router navigation depth, project lightbox view rates, inquiry form submission rates, time on ecosystem briefs.
-2. **User Experience & Technical Health**: Core Web Vitals (LCP < 1.2s, INP < 100ms, zero layout shifts, mobile responsiveness).
-3. **Behavioral Heatmaps**: PostHog session replays, Hotjar click maps to identify where visitors hesitate.
+**Proposed tool:** ClimaCraft Engine — AI Assistant for Climate-Responsive Design
 
-**Scenario Diagnostic: 5,000 Visitors / 5 Inquiries (0.1% CVR):**  
-A 0.1% conversion rate indicates severe friction or traffic mismatch. Here is my diagnostic protocol:
+### What it does and who it is for
 
-1. **Traffic Intent Audit**: Compare organic search/referrals vs unfocused social traffic to verify visitor qualification.
-2. **Funnel Abandonment in PostHog**: If 80% exit on the hero, the value proposition is ambiguous; if visitors reach the contact section but drop off, the form is either too long, broken on mobile devices, or demands excessive upfront commitment.
-3. **Mobile Usability Testing**: Over 70% of regional visitors use mobile phones; audit for viewport overflows or slow script blocking.
+ClimaCraft would help architects and design teams make better early design decisions based on local climate conditions and available building materials. It would be particularly useful for professionals working in tropical African climates.
 
-**Next Steps & Iterations:**  
-- Streamline the inquiry form to three essential fields (Name, Project Type, Email).  
-- Introduce a low-commitment micro-conversion (e.g., "Download Studio COKA Architectural Portfolio" or "Book 15-Min Discovery Call").  
-- Implement a 1-click WhatsApp studio connection.  
-- A/B test hero positioning with Hotjar heatmaps tracking hesitation.
+### The problem it solves
+
+Choosing materials and planning for heat, sunlight, and ventilation can be challenging without reliable local information. ClimaCraft would bring relevant climate data and research together, helping architects explore passive design options before committing to a particular approach.
+
+### How someone would use it
+
+An architect would enter the project location, building type, and approximate budget. The tool would then suggest options for shading, natural ventilation, and suitable local materials. It could present these recommendations in a simple report that the architect can review and share with the project team.
+
+### Technology and implementation
+
+I would build the interface with Next.js and connect it to an LLM through a server-side API route. A service such as OpenAI's API or Gemini could interpret the project requirements and explain the available options. A small, curated knowledge base of verified climate research, material information, and relevant case studies would help ground the responses in reliable sources.
+
+For the first version, I would focus on collecting project details, generating recommendations, and exporting a report. I would add more advanced climate calculations as the data sources and validation process mature.
+
+### Limitations and safeguards
+
+AI recommendations should not be treated as engineering approval. The tool must distinguish verified data from estimates, avoid inventing material properties or structural figures, and require qualified professionals to review safety-critical decisions. Recommendations should also be checked against local building requirements and reliable supplier information.
 
 ---
 
-## 4. Technical Architecture & Stack Highlights
+## 3. Part 3 — Analytics and Improvement Strategy
 
-- **Framework**: Next.js 16.4 (App Router) + React 19 + TypeScript
-- **Styling**: Tailwind CSS v4 with bespoke architectural design tokens (Basalt `#0E0D0C`, Terracotta Clay `#C2704E`, Travertine `#E5DFC5`, Sandstone `#FAF8F5`)
-- **Interactivity**: Motion v12 transitions, Canvas Confetti celebration, dynamic lightbox viewer, intent routing matrix
-- **SEO & Search**: Complete Open Graph, Twitter Cards, Semantic HTML5 hierarchy, and JSON-LD `Person` / `Organization` schema
-- **Performance**: Zero external render-blocking font dependencies, optimized responsive Next/Image assets, sub-second Turbopack compilation
+### How I would measure website performance
+
+I would look at three main things: whether the site attracts the right visitors, how easily they use it, and whether they take the next step.
+
+I would track traffic sources, visits to key project pages, clicks on calls to action, and enquiry-form submissions. I would also monitor Core Web Vitals, mobile usability, and errors that could affect the experience.
+
+For this, I would use Google Analytics 4 to track visitor behaviour, Google Search Console to understand search performance, and PostHog or Microsoft Clarity to investigate where visitors struggle. PageSpeed Insights would help identify performance issues.
+
+### Scenario: 5,000 visitors and 5 enquiries
+
+Five enquiries from 5,000 visitors gives a conversion rate of 0.1%. I would investigate the cause before assuming that the website itself is the problem.
+
+First, I would check where the visitors come from and whether they are likely to need the services being offered. Next, I would review the journey from the landing page to the contact section. If visitors leave early, the message or call to action may not be clear enough. If they reach the form but do not submit it, I would check for usability issues, unnecessary fields, and mobile errors.
+
+### What I would do next
+
+I would fix any technical problems first, then test a shorter enquiry form with only the essential fields. I would also consider alternatives such as a direct WhatsApp enquiry or a short discovery call.
+
+I would measure the results of each change and compare them with the original conversion rate before deciding what to improve next.
+
+---
+
+## 4. Technical Architecture and Stack
+
+* **Framework:** Next.js 16.4 with App Router, React 19, and TypeScript.
+* **Styling:** Tailwind CSS v4 with a custom palette inspired by architectural materials:
+
+  * Basalt: `#0E0D0C`
+  * Terracotta Clay: `#C2704E`
+  * Travertine: `#E5DFC5`
+  * Sandstone: `#FAF8F5`
+* **Interactions:** Motion v12, project lightbox, ecosystem modals, and visitor intent routing.
+* **SEO:** Open Graph metadata, Twitter Cards, semantic HTML, and JSON-LD structured data for people and organisations.
+* **Performance:** Responsive image optimisation with Next.js Image and attention to unnecessary external font requests.
+* **Development:** Turbopack for the development workflow.
