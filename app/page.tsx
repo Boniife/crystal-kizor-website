@@ -1,69 +1,118 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import IntentNavigator from "@/components/IntentNavigator";
+import EcosystemGrid from "@/components/EcosystemGrid";
+import ProjectGallery from "@/components/ProjectGallery";
+import SpeakingSection from "@/components/SpeakingSection";
+import WritingArchive from "@/components/WritingArchive";
+import Footer from "@/components/Footer";
+import ProjectLightbox from "@/components/ProjectLightbox";
+import BrandDetailDrawer from "@/components/BrandDetailDrawer";
+import InquiryDrawer from "@/components/InquiryDrawer";
+import StrategyBriefModal from "@/components/StrategyBriefModal";
+import { ArchitecturalProject, EcosystemBrand } from "@/lib/data";
 
 export default function Home() {
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
+  const [inquiryIntent, setInquiryIntent] = useState("Studio COKA Architecture");
+
+  const [isStrategyOpen, setIsStrategyOpen] = useState(false);
+  const [strategyTab, setStrategyTab] = useState("submission");
+
+  const [selectedProject, setSelectedProject] = useState<ArchitecturalProject | null>(null);
+  const [selectedBrand, setSelectedBrand] = useState<EcosystemBrand | null>(null);
+
+  const handleOpenInquiry = (intent?: string) => {
+    if (intent) setInquiryIntent(intent);
+    setIsInquiryOpen(true);
+  };
+
+  const handleOpenStrategy = (tab?: string) => {
+    if (tab) setStrategyTab(tab);
+    setIsStrategyOpen(true);
+  };
+
+  const handleScrollToSection = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="min-h-screen bg-[#0E0D0C] text-[#F3EFEA] relative selection:bg-[#C2704E] selection:text-white">
+      {/* Top Navbar */}
+      <Navbar
+        onOpenInquiry={handleOpenInquiry}
+        onOpenStrategy={handleOpenStrategy}
+      />
+
+      {/* Hero Monograph */}
+      <Hero
+        onOpenInquiry={handleOpenInquiry}
+        onScrollToSection={handleScrollToSection}
+      />
+
+      {/* Where Should I Go Next? Intent Navigator */}
+      <IntentNavigator
+        onOpenInquiry={handleOpenInquiry}
+        onScrollToSection={handleScrollToSection}
+      />
+
+      {/* The 7 Ecosystem Pillars */}
+      <EcosystemGrid
+        onOpenInquiry={handleOpenInquiry}
+        onSelectBrand={(brand) => setSelectedBrand(brand)}
+      />
+
+      {/* Selected Architectural Works & ELEvated Pieces */}
+      <ProjectGallery
+        onSelectProject={(proj) => setSelectedProject(proj)}
+        onOpenInquiry={handleOpenInquiry}
+      />
+
+      {/* Speaking & Keynotes */}
+      <SpeakingSection onOpenInquiry={handleOpenInquiry} />
+
+      {/* Research & Publications Archive */}
+      <WritingArchive onOpenInquiry={handleOpenInquiry} />
+
+      {/* Footer Colophon */}
+      <Footer
+        onOpenInquiry={handleOpenInquiry}
+        onOpenStrategy={handleOpenStrategy}
+      />
+
+      {/* Lightbox for Project Inspection */}
+      <ProjectLightbox
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+        onOpenInquiry={handleOpenInquiry}
+      />
+
+      {/* Brand Deep-Dive Drawer */}
+      <BrandDetailDrawer
+        brand={selectedBrand}
+        onClose={() => setSelectedBrand(null)}
+        onOpenInquiry={handleOpenInquiry}
+      />
+
+      {/* Direct Inquiry & Booking Drawer */}
+      <InquiryDrawer
+        isOpen={isInquiryOpen}
+        initialIntent={inquiryIntent}
+        onClose={() => setIsInquiryOpen(false)}
+      />
+
+      {/* Strategic Documentation & Assessment Brief Modal */}
+      <StrategyBriefModal
+        isOpen={isStrategyOpen}
+        initialTab={strategyTab}
+        onClose={() => setIsStrategyOpen(false)}
+      />
+    </main>
   );
 }
